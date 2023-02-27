@@ -1,19 +1,20 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Container, Flex } from '@chakra-ui/react'
+
 import { MetaTags } from '@redwoodjs/web'
+
+import Cart from 'src/sections/cart'
+import Details from 'src/sections/details'
 
 const HomePage = () => {
   return (
     <>
       <MetaTags title="Home" description="Home page" />
-
-      <h1>HomePage</h1>
-      <p>
-        Find me in <code>./web/src/pages/HomePage/HomePage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>home</code>, link to me with `
-        <Link to={routes.home()}>Home</Link>`
-      </p>
+      <Container maxW="container.xl" p={0}>
+        <Flex h="100vh" p={20}>
+          <Details></Details>
+          <Cart></Cart>
+        </Flex>
+      </Container>
     </>
   )
 }
